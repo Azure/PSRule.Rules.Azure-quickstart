@@ -1,0 +1,38 @@
+#
+# Analyze repository with PSRule
+#
+
+# Note:
+# This workflow is designed to run only in Azure/PSRule.Rules.Azure-quickstart.
+# You can safely deleted this file if you have templated this repository to your GitHub organization.
+
+# For PSRule documentation see:
+# https://aka.ms/ps-rule
+
+# For action details see:
+# https://aka.ms/ps-rule-action
+
+name: Analyze repository
+
+# Run for main or PRs against main
+on:
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze repository
+    runs-on: ubuntu-latest
+    if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2.3.5
+
+    - name: Run PSRule analysis
+      uses: Microsoft/ps-rule@main
+      with:
+        modules: PSRule.Rules.MSFT.OSS
+        prerelease: true
