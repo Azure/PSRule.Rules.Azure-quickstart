@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-
 // Note:
 // This Azure Bicep code demonistrates a deployment of one or more modules.
 // This file has multiple template errors to show validation.
@@ -12,9 +11,8 @@ module storage '../../../../../templates/storage/v2/template.bicep' = {
   params: {
     storageAccountName: 'st002'
 
-    // An env tag is required at a minimum
-    tags: {
-    }
+    // Don't allow anonymous access types of blob or container
+    allowBlobPublicAccess: false
   }
 }
 

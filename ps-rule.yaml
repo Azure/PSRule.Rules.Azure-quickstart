@@ -31,6 +31,6 @@ configuration:
 # Suppression ignores rules for a specific Azure resource by name
 suppression:
   Azure.Storage.UseReplication:
-  - st002
+  - st001
   Azure.Storage.SoftDelete:
-  - st002
+  - st001

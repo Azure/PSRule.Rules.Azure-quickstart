@@ -8,11 +8,8 @@
         "storageAccountName": {
             "value": "st001"
         },
-        "blobSoftDeleteDays": {
-            "value": 7
-        },
         "sku": {
-            "value": "Standard_GRS"
+            "value": "Standard_LRS"
         },
         "tags": {
             "value": {
