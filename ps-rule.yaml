@@ -1,0 +1,36 @@
+#
+# PSRule for Azure configuration
+#
+
+# Please see the documentation for all configuration options:
+# https://aka.ms/ps-rule-azure
+
+binding:
+  preferTargetInfo: true
+  targetType:
+  - type
+  - resourceType
+
+include:
+  module:
+  - PSRule.Rules.Azure
+
+input:
+  pathIgnore:
+  - '.vscode/'
+  - '*.md'
+  - 'templates/*.bicep'
+
+configuration:
+  # Enable automatic expansion of Azure parameter files
+  AZURE_PARAMETER_FILE_EXPANSION: true
+
+  # Enable automatic expansion of bicep source files
+  AZURE_BICEP_FILE_EXPANSION: true
+
+# Suppression ignores rules for a specific Azure resource by name
+suppression:
+  Azure.Storage.UseReplication:
+  - st002
+  Azure.Storage.SoftDelete:
+  - st002

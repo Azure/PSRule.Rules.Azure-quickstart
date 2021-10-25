@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "template": "templates/storage/v2/template.json"
+    },
+    "parameters": {
+        "storageAccountName": {
+            "value": "st001"
+        },
+        "blobSoftDeleteDays": {
+            "value": 7
+        },
+        "sku": {
+            "value": "Standard_GRS"
+        },
+        "tags": {
+            "value": {
+                "env": "demo",
+                "service": "demo"
+            }
+        }
+    }
+}

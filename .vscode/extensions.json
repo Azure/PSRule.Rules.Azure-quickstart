@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "bewhite.psrule-vscode-preview",
+        "msazurermtools.azurerm-vscode-tools",
+        "ms-azuretools.vscode-bicep"
+    ]
+}

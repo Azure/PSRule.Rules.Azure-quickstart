@@ -1,0 +1,33 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+# Note:
+# This files demonstrates using PowerShell based rules.
+
+---
+# Synopsis: Azure resource must have an valid env tag set.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Org.Azure.Tags
+spec:
+  with:
+  - 'Org.Azure.Resources'
+  condition:
+    allOf:
+    - in:
+        - 'prod'
+        - 'test'
+        - 'dev'
+      field: 'tags.env'
+
+---
+# Synopsis: Select all Azure resources.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Selector
+metadata:
+  name: Org.Azure.Resources
+spec:
+  if:
+    field: type
+    match: Microsoft\.\w+\/.+
