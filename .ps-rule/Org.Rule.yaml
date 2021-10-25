@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 # Note:
-# This files demonstrates using PowerShell based rules.
+# This files demonstrates using YAML-based rules.
 
 ---
 # Synopsis: Azure resource must have an valid env tag set.
@@ -11,8 +11,8 @@ kind: Rule
 metadata:
   name: Org.Azure.Tags
 spec:
-  with:
-  - 'Org.Azure.Resources'
+  type:
+  - 'Microsoft.Storage/storageAccounts'
   condition:
     allOf:
     - in:
@@ -20,14 +20,3 @@ spec:
         - 'test'
         - 'dev'
       field: 'tags.env'
-
----
-# Synopsis: Select all Azure resources.
-apiVersion: github.com/microsoft/PSRule/v1
-kind: Selector
-metadata:
-  name: Org.Azure.Resources
-spec:
-  if:
-    field: type
-    match: Microsoft\.\w+\/.+
