@@ -2,9 +2,12 @@
 // Licensed under the MIT License.
 
 @description('The name of the Storage Account.')
-param storageAccountName string
+param name string
 
 @description('The Azure region to deploy to.')
+@metadata({
+  strongType: 'location'
+})
 param location string = resourceGroup().location
 
 @description('Create the Storage Account as LRS or GRS.')
@@ -15,7 +18,7 @@ param allowBlobPublicAccess bool = true
 
 // Define a Storage Account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
-  name: storageAccountName
+  name: name
   location: location
   sku: {
     name: sku

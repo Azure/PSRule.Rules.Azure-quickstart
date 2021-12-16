@@ -19,8 +19,7 @@
             "metadata": {
                 "description": "The Azure region to deploy to.",
                 "strongType": "location",
-                "example": "eastus",
-                "ignore": true
+                "example": "eastus"
             }
         },
         "accessPolicies": {
@@ -47,40 +46,35 @@
             "type": "bool",
             "defaultValue": true,
             "metadata": {
-                "description": "Determines if Azure can deploy certificates from this Key Vault.",
-                "ignore": true
+                "description": "Determines if Azure can deploy certificates from this Key Vault."
             }
         },
         "useTemplate": {
             "type": "bool",
             "defaultValue": true,
             "metadata": {
-                "description": "Determines if templates can reference secrets from this Key Vault.",
-                "ignore": true
+                "description": "Determines if templates can reference secrets from this Key Vault."
             }
         },
         "useDiskEncryption": {
             "type": "bool",
             "defaultValue": true,
             "metadata": {
-                "description": "Determines if this Key Vault can be used for Azure Disk Encryption.",
-                "ignore": true
+                "description": "Determines if this Key Vault can be used for Azure Disk Encryption."
             }
         },
         "useSoftDelete": {
             "type": "bool",
             "defaultValue": true,
             "metadata": {
-                "description": "Determine if soft delete is enabled on this Key Vault.",
-                "ignore": true
+                "description": "Determine if soft delete is enabled on this Key Vault."
             }
         },
         "usePurgeProtection": {
             "type": "bool",
             "defaultValue": true,
             "metadata": {
-                "description": "Determine if purge protection is enabled on this Key Vault.",
-                "ignore": true
+                "description": "Determine if purge protection is enabled on this Key Vault."
             }
         },
         "softDeleteDays": {
