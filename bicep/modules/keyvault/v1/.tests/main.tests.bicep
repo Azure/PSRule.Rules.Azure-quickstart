@@ -1,4 +1,5 @@
-// Test module
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 
 // Test with only required parameters
 module test_required_params '../main.bicep' = {
