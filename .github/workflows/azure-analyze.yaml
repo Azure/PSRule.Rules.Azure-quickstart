@@ -3,7 +3,7 @@
 #
 
 # Note:
-# This workflow is designed to run in templated repositories.
+# This workflow is designed to run in templated repositories to check Azure Infrastructure as Code.
 
 # For PSRule for Azure documentation see:
 # https://aka.ms/ps-rule-azure
