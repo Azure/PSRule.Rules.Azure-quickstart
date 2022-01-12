@@ -1,6 +1,6 @@
 # PSRule for Azure Quick Start
 
-This repository contains a sample template you can use to quickly start using PSRule for Azure.
+This repository contains a sample code you can use to quickly start using PSRule for Azure.
 To learn more about PSRule for Azure, see https://aka.ms/ps-rule-azure.
 
 [![Use this template](https://img.shields.io/static/v1?label=GitHub&message=Use%20this%20template&logo=github&color=007acc)](https://github.com/Azure/PSRule.Rules.Azure-quickstart/generate)
