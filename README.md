@@ -11,12 +11,12 @@ To learn more about PSRule for Azure, see https://aka.ms/ps-rule-azure.
 This repository includes:
 
 - **Azure Templates** &mdash; Starter Azure Resource Manager (ARM) templates and parameter files.
-  - Use the files in the `template/` folder if you are used ARM templates to deploy resources.
+  - Use the files in the `template/` folder if you are using ARM templates to deploy resources.
 - **Azure Bicep** &mdash; Starter Azure Bicep deployments and test files.
-  - Use the files in the `bicep/` folder if you are used Bicep deployments and modules to deploy resources.
+  - Use the files in the `bicep/` folder if you are using Bicep deployments and modules to deploy resources.
 - **GitHub Actions** &mdash; Starter workflow for checking Azure Infrastructure as Code (IaC).
   - Use the files in the `.github/workflows/` to check your Azure IaC with GitHub Actions.
-  - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repoistory.
+  - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repository.
 - **Azure Pipelines** &mdash; Comming soon.
 
 ## Support
