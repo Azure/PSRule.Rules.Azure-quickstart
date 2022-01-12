@@ -213,7 +213,7 @@
                     ],
                     "ipRules": [
                     ],
-                    "defaultAction": "Allow"
+                    "defaultAction": "Deny"
                 },
                 "supportsHttpsTrafficOnly": true,
                 "encryption": {

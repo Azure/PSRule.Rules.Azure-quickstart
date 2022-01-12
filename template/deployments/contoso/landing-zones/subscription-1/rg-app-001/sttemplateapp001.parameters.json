@@ -9,12 +9,20 @@
             "value": "sttemplateapp001"
         },
         "sku": {
-            "value": "Standard_LRS"
+            // The storage account must use GRS storage.
+            // Try setting this to 'Standard_LRS' to fail the Azure.Storage.UseReplication rule.
+            "value": "Standard_GRS"
+        },
+        "blobSoftDeleteDays": {
+            // The storage account must use soft delete on blobs.
+            // Try setting this to 0 or removing this parameter entirely to fail the 'Azure.Storage.SoftDelete' rule.
+            "value": 7
         },
         "tags": {
             "value": {
-                "env": "demo",
-                "service": "demo"
+                // An env tag must be test, dev, or prod.
+                // Try setting this to 'demo' to fail the Org.Azure.Tags rule.
+                "env": "prod"
             }
         }
     }

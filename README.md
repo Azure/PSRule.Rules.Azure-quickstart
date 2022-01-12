@@ -18,6 +18,16 @@ This repository includes:
   - Use the files in the `.github/workflows/` to check your Azure IaC with GitHub Actions.
   - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repository.
 - **Azure Pipelines** &mdash; Comming soon.
+- **Custom rules** &mdash; Example custom rules that enforce organization specific requirements.
+  - Use the files in the `.ps-rule/` folder to configure custom rules.
+
+## What to expect?
+
+This repository shows valid uses of PSRule for Azure, both pass and failure cases.
+Inspect the following files for instructions to test PSRule for Azure rules by creating a failure.
+
+- [bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/main.bicep](bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/main.bicep)
+- [template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json](template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json)
 
 ## Support
 

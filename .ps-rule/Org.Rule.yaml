@@ -13,6 +13,7 @@ metadata:
 spec:
   type:
   - 'Microsoft.Storage/storageAccounts'
+  - 'Microsoft.KeyVault/vaults'
   condition:
     allOf:
     - in:
