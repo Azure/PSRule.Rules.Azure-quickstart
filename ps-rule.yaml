@@ -11,6 +11,7 @@ binding:
   - type
   - resourceType
 
+# Use PSRule for Azure
 include:
   module:
   - PSRule.Rules.Azure
@@ -19,6 +20,8 @@ input:
   pathIgnore:
   - '.vscode/'
   - '*.md'
+
+  # Exclude modules but not tests.
   - 'bicep/modules/**/*.bicep'
   - '!bicep/modules/**/*.tests.bicep'
 
@@ -31,12 +34,7 @@ configuration:
 
 # Suppression ignores rules for a specific Azure resource by name
 suppression:
-  Azure.Storage.UseReplication:
-  - sttemplateapp001
-  Azure.Storage.SoftDelete:
-  - sttemplateapp001
   Azure.KeyVault.Logs:
   - kvtest001
   Azure.Storage.BlobPublicAccess:
   - sttest001
-
