@@ -1,6 +1,6 @@
 # PSRule for Azure Quick Start
 
-This repository contains a sample template you can use to quickly start using PSRule for Azure.
+This repository contains a sample code you can use to quickly start using PSRule for Azure.
 To learn more about PSRule for Azure, see https://aka.ms/ps-rule-azure.
 
 [![Use this template](https://img.shields.io/static/v1?label=GitHub&message=Use%20this%20template&logo=github&color=007acc)](https://github.com/Azure/PSRule.Rules.Azure-quickstart/generate)
@@ -10,9 +10,14 @@ To learn more about PSRule for Azure, see https://aka.ms/ps-rule-azure.
 
 This repository includes:
 
-- Starter Azure Resource Manager templates and parameter files.
-- Starter Azure Bicep deployments and test files.
-- GitHub Actions workflow to check Azure Infrastructure as Code.
+- **Azure Templates** &mdash; Starter Azure Resource Manager (ARM) templates and parameter files.
+  - Use the files in the `template/` folder if you are used ARM templates to deploy resources.
+- **Azure Bicep** &mdash; Starter Azure Bicep deployments and test files.
+  - Use the files in the `bicep/` folder if you are used Bicep deployments and modules to deploy resources.
+- **GitHub Actions** &mdash; Starter workflow for checking Azure Infrastructure as Code (IaC).
+  - Use the files in the `.github/workflows/` to check your Azure IaC with GitHub Actions.
+  - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repoistory.
+- **Azure Pipelines** &mdash; Comming soon.
 
 ## Support
 

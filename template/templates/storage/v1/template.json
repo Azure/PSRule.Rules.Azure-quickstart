@@ -19,8 +19,7 @@
             "metadata": {
                 "description": "The Azure region to deploy to.",
                 "strongType": "location",
-                "example": "EastUS",
-                "ignore": true
+                "example": "EastUS"
             }
         },
         "sku": {
@@ -40,8 +39,7 @@
             "minValue": 0,
             "maxValue": 13,
             "metadata": {
-                "description": "Determine how many additional characters are added to the storage account name as a suffix.",
-                "ignore": true
+                "description": "Determine how many additional characters are added to the storage account name as a suffix."
             }
         },
         "containers": {
@@ -128,8 +126,7 @@
             "type": "bool",
             "defaultValue": false,
             "metadata": {
-                "description": "Determines if large file shares are enabled. This can not be disabled once enabled.",
-                "ignore": true
+                "description": "Determines if large file shares are enabled. This can not be disabled once enabled."
             }
         },
         "shareSoftDeleteDays": {
@@ -153,8 +150,7 @@
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Set to the objectId of Azure Key Vault to delegated permission for use with Key Managed Storage Accounts.",
-                "ignore": true
+                "description": "Set to the objectId of Azure Key Vault to delegated permission for use with Key Managed Storage Accounts."
             }
         },
         "tags": {

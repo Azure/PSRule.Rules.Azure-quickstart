@@ -19,18 +19,24 @@ input:
   pathIgnore:
   - '.vscode/'
   - '*.md'
-  - 'templates/*.bicep'
+  - 'bicep/modules/**/*.bicep'
+  - '!bicep/modules/**/*.tests.bicep'
 
 configuration:
   # Enable automatic expansion of Azure parameter files
   AZURE_PARAMETER_FILE_EXPANSION: true
 
-  # Enable automatic expansion of bicep source files
+  # Enable automatic expansion of Azure Bicep source files
   AZURE_BICEP_FILE_EXPANSION: true
 
 # Suppression ignores rules for a specific Azure resource by name
 suppression:
   Azure.Storage.UseReplication:
-  - st001
+  - sttemplateapp001
   Azure.Storage.SoftDelete:
-  - st001
+  - sttemplateapp001
+  Azure.KeyVault.Logs:
+  - kvtest001
+  Azure.Storage.BlobPublicAccess:
+  - sttest001
+
