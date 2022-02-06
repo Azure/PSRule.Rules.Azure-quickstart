@@ -16,9 +16,14 @@ include:
   module:
   - PSRule.Rules.Azure
 
+output:
+  culture:
+  - 'en-US'
+
 input:
   pathIgnore:
   - '.vscode/'
+  - '.github/'
   - '*.md'
 
   # Exclude modules but not tests.
