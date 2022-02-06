@@ -11,7 +11,9 @@ module storage '../../../../../modules/storage/v1/main.bicep' = {
   params: {
     name: 'stbicepapp002'
 
-    location: 'antartic'
+    // The Azure location must be valid
+    // Try setting this to 'Antarctica'
+    location: 'eastus'
 
     // Don't allow anonymous access types of blob or container.
     // Try setting this false to fail the Azure.Storage.BlobPublicAccess rule.
