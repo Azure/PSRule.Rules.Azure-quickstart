@@ -3,8 +3,11 @@
 This repository contains a sample code you can use to quickly start using PSRule for Azure.
 To learn more about PSRule for Azure, see https://aka.ms/ps-rule-azure.
 
-[![Use this template](https://img.shields.io/static/v1?label=GitHub&message=Use%20this%20template&logo=github&color=007acc)](https://github.com/Azure/PSRule.Rules.Azure-quickstart/generate)
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Azure/PSRule.Rules.Azure-quickstart)
+[![Use this template](https://img.shields.io/static/v1?label=GitHub&message=Use%20this%20template&logo=github&color=007acc)][1]
+[![Open in vscode.dev](https://img.shields.io/badge/Open%20in-vscode.dev-blue)][2]
+
+  [1]: https://github.com/Azure/PSRule.Rules.Azure-quickstart/generate
+  [2]: https://vscode.dev/github/Azure/PSRule.Rules.Azure-quickstart
 
 ## What's included?
 
