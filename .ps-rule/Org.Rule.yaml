@@ -11,9 +11,8 @@ kind: Rule
 metadata:
   name: Org.Azure.Tags
 spec:
-  type:
-  - 'Microsoft.Storage/storageAccounts'
-  - 'Microsoft.KeyVault/vaults'
+  with:
+  - PSRule.Rules.Azure\Azure.Resource.SupportsTags
   condition:
     allOf:
     - in:
