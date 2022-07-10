@@ -15,14 +15,16 @@
         "ms-azuretools.vscode-bicep"
     ],
     "features": {
-        "github-cli": "latest"
+        "github-cli": "latest",
+        "azure-cli": "latest",
+        "powershell": "latest"
     },
     "onCreateCommand": [
-        "/home/codespace/.dotnet/dotnet tool install --global PowerShell",
         "curl -Lo bicep-cli https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64",
         "chmod +x ./bicep-cli",
         "sudo mv ./bicep-cli /usr/local/bin/bicep",
         "pwsh -f .devcontainer/container-build.ps1"
     ],
-    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1"
+    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1",
+    "remoteUser": "vscode"
 }
