@@ -7,3 +7,6 @@
 # Update modules
 Update-Module PSRule.Rules.Azure -Scope CurrentUser -Force;
 Update-Module PSRule -Scope CurrentUser -Force;
+
+# Update Bicep
+az bicep upgrade
