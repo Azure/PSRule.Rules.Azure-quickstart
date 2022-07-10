@@ -20,5 +20,8 @@
         "powershell": "latest"
     },
     "onCreateCommand": "pwsh -f .devcontainer/container-build.ps1",
-    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1"
+    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1",
+    "containerEnv": {
+        "PSRULE_AZURE_BICEP_USE_AZURE_CLI": "true"
+    }
 }
