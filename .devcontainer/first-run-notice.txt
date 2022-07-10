@@ -1,0 +1,5 @@
+👋 Welcome to PSRule for Azure.
+   - The latest tools are ready to use from this QuickStart template.
+   - You can also install the recommended extensions for Visual Studio Code to get an even better editing experience.
+
+🔍 To configure PSRule for Azure see https://aka.ms/ps-rule-azure/options
