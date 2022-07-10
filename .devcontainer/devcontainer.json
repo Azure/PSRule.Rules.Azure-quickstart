@@ -9,10 +9,11 @@
         }
     },
     "extensions": [
-        "ms-azure-devops.azure-pipelines",
-        "bewhite.psrule-vscode-preview",
+        "ms-vscode.powershell",
+        "bewhite.psrule-vscode",
         "msazurermtools.azurerm-vscode-tools",
-        "ms-azuretools.vscode-bicep"
+        "ms-azuretools.vscode-bicep",
+        "ms-azure-devops.azure-pipelines"
     ],
     "features": {
         "github-cli": "latest",
@@ -20,8 +21,5 @@
         "powershell": "latest"
     },
     "onCreateCommand": "pwsh -f .devcontainer/container-build.ps1",
-    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1",
-    "containerEnv": {
-        "PSRULE_AZURE_BICEP_USE_AZURE_CLI": "true"
-    }
+    "postStartCommand": "pwsh -f .devcontainer/container-start.ps1"
 }

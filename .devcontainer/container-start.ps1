@@ -6,7 +6,10 @@
 
 # Update modules
 Update-Module PSRule.Rules.Azure -Scope CurrentUser -Force;
-Update-Module PSRule -Scope CurrentUser -Force;
 
-# Update Bicep
-az bicep upgrade
+# Fetch the latest Bicep CLI binary
+curl -Lo bicep-cli https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+# Mark it as executable
+chmod +x ./bicep-cli
+# Add bicep to your PATH (requires admin)
+sudo mv ./bicep-cli /usr/local/bin/bicep --force
