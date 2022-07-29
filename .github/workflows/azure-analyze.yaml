@@ -33,7 +33,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    # Run analysis by using the PSRule GitHub action.
     - name: Run PSRule analysis
-      uses: Microsoft/ps-rule@v2.2.0
+      uses: microsoft/ps-rule@v2.2.0
       with:
         modules: 'PSRule.Rules.Azure'

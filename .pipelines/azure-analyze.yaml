@@ -1,0 +1,43 @@
+#
+# Analyze repository with PSRule for Azure
+#
+
+# Note:
+# This pipelines is designed to run in templated repositories to check Azure Infrastructure as Code.
+
+# For PSRule for Azure documentation see:
+# https://aka.ms/ps-rule-azure
+
+# For Azure Pipeline extension details see:
+# https://aka.ms/ps-rule-pipelines
+
+# Set the triggers to automatically start this pipeline.
+trigger:
+  branches:
+    include:
+    - main
+
+stages:
+
+- stage: analyze
+  displayName: Analyze
+  jobs:
+
+  - job: analyze_repo
+    displayName: Analyze repository
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+
+    # Run analysis by using the PSRule Azure Pipelines extension.
+    # This needs to be pre-installed within your organization by visiting https://aka.ms/ps-rule-pipelines.
+    - task: ps-rule-assert@2
+      displayName: Run PSRule analysis
+      inputs:
+        modules: PSRule.Rules.Azure
+        outputFormat: Sarif
+        outputPath: reports/ps-rule-results.sarif
+
+    - publish: $(System.DefaultWorkingDirectory)/reports/ps-rule-results.sarif
+      artifact: CodeAnalysisLogs
+      displayName: Publish SARIF logs
