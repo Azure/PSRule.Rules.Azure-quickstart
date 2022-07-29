@@ -20,7 +20,8 @@ This repository includes:
 - **GitHub Actions** &mdash; Starter workflow for checking Azure Infrastructure as Code (IaC).
   - Use the files in the `.github/workflows/` to check your Azure IaC with GitHub Actions.
   - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repository.
-- **Azure Pipelines** &mdash; Coming soon.
+- **Azure Pipelines** &mdash; Starter pipeline for checking Azure Infrastructure as Code (IaC).
+  - Use the files in the `.pipelines/` to check your Azure IaC with Azure Pipelines.
 - **Custom rules** &mdash; Example custom rules that enforce organization specific requirements.
   - Use the files in the `.ps-rule/` folder to configure custom rules.
 - **PSRule options** &mdash; Example options for using PSRule for Azure.
