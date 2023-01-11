@@ -1,9 +1,9 @@
 {
-    "recommendations": [
-        "ms-vscode.powershell",
-        "bewhite.psrule-vscode",
-        "msazurermtools.azurerm-vscode-tools",
-        "ms-azuretools.vscode-bicep",
-        "ms-azure-devops.azure-pipelines"
-    ]
+  "recommendations": [
+    "ms-vscode.powershell",
+    "bewhite.psrule-vscode",
+    "msazurermtools.azurerm-vscode-tools",
+    "ms-azuretools.vscode-bicep",
+    "ms-azure-devops.azure-pipelines"
+  ]
 }
