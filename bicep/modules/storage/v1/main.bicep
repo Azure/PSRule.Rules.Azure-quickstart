@@ -1,10 +1,13 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-@description('The name of the Storage Account.')
+metadata name = 'Storage Account'
+metadata description = 'Create or update an Storage Account.'
+
+@sys.description('The name of the Storage Account.')
 param name string
 
-@description('The Azure region to deploy to.')
+@sys.description('The Azure region to deploy to.')
 @metadata({
   strongType: 'location'
 })
@@ -14,13 +17,13 @@ param location string = resourceGroup().location
   'Standard_GRS'
   'Standard_LRS'
 ])
-@description('Create the Storage Account as LRS or GRS.')
+@sys.description('Create the Storage Account as LRS or GRS.')
 param sku string = 'Standard_GRS'
 
-@description('Determines if any containers can be configured with the anonymous access types of blob or container.')
+@sys.description('Determines if any containers can be configured with the anonymous access types of blob or container.')
 param allowBlobPublicAccess bool = true
 
-@description('Tags to apply to the resource.')
+@sys.description('Tags to apply to the resource.')
 @metadata({
   example: {
     service: '<service_name>'

@@ -1,16 +1,19 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-@description('The name of the Key Vault.')
+metadata name = 'Key Vault'
+metadata description = 'Create or update an Azure Key Vault.'
+
+@sys.description('The name of the Key Vault.')
 param name string
 
-@description('The Azure region to deploy to.')
+@sys.description('The Azure region to deploy to.')
 @metadata({
   strongType: 'location'
 })
 param location string = resourceGroup().location
 
-@description('The access policies defined for this vault.')
+@sys.description('The access policies defined for this vault.')
 @metadata({
   example: [
     {
@@ -28,30 +31,30 @@ param location string = resourceGroup().location
 })
 param accessPolicies array = []
 
-@description('Determines if Azure can deploy certificates from this Key Vault.')
+@sys.description('Determines if Azure can deploy certificates from this Key Vault.')
 param useDeployment bool = true
 
-@description('Determines if templates can reference secrets from this Key Vault.')
+@sys.description('Determines if templates can reference secrets from this Key Vault.')
 param useTemplate bool = true
 
-@description('Determines if this Key Vault can be used for Azure Disk Encryption.')
+@sys.description('Determines if this Key Vault can be used for Azure Disk Encryption.')
 param useDiskEncryption bool = true
 
-@description('Determine if soft delete is enabled on this Key Vault.')
+@sys.description('Determine if soft delete is enabled on this Key Vault.')
 param useSoftDelete bool = true
 
-@description('Determine if purge protection is enabled on this Key Vault.')
+@sys.description('Determine if purge protection is enabled on this Key Vault.')
 param usePurgeProtection bool = true
 
-@description('The number of days to retain soft deleted vaults and vault objects.')
+@sys.description('The number of days to retain soft deleted vaults and vault objects.')
 @minValue(7)
 @maxValue(90)
 param softDeleteDays int = 90
 
-@description('Determines if access to the objects granted using RBAC. When true, access policies are ignored.')
+@sys.description('Determines if access to the objects granted using RBAC. When true, access policies are ignored.')
 param useRBAC bool = false
 
-@description('The network firewall defined for this vault.')
+@sys.description('The network firewall defined for this vault.')
 param networkAcls object = {
   defaultAction: 'Allow'
   bypass: 'AzureServices'
@@ -59,14 +62,14 @@ param networkAcls object = {
   virtualNetworkRules: []
 }
 
-@description('The workspace to store audit logs.')
+@sys.description('The workspace to store audit logs.')
 @metadata({
   strongType: 'Microsoft.OperationalInsights/workspaces'
   example: '/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.OperationalInsights/workspaces/<workspace_name>'
 })
 param workspaceId string = ''
 
-@description('Tags to apply to the resource.')
+@sys.description('Tags to apply to the resource.')
 @metadata({
   example: {
     service: '<service_name>'

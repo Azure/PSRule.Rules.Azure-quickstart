@@ -2,22 +2,14 @@
   "files.associations": {
     "**/.pipelines/**/*.yaml": "azure-pipelines"
   },
+  "yaml.format.singleQuote": true,
+  "files.insertFinalNewline": true,
   "editor.insertSpaces": true,
-  "[json]": {
-    "editor.detectIndentation": false,
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "files.insertFinalNewline": true
-  },
-  "[jsonc]": {
-    "editor.detectIndentation": false,
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "files.insertFinalNewline": true
-  },
-  "[markdown]": {
-    "editor.detectIndentation": false,
-    "editor.tabSize": 2,
-    "files.insertFinalNewline": true
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "[powershell]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4
   }
 }
