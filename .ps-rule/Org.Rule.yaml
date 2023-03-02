@@ -12,11 +12,25 @@ metadata:
   name: Org.Azure.Tags
 spec:
   with:
-  - PSRule.Rules.Azure\Azure.Resource.SupportsTags
+    - PSRule.Rules.Azure\Azure.Resource.SupportsTags
   condition:
     allOf:
-    - in:
-        - 'prod'
-        - 'test'
-        - 'dev'
-      field: 'tags.env'
+      - in:
+          - 'prod'
+          - 'test'
+          - 'dev'
+        field: 'tags.env'
+
+---
+# Synopsis: Policy exemptions must be approved by the security team and stored within deployments/contoso/landing-zones/subscription-1/policy/.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Org.CodeOwners
+spec:
+  type:
+    - Microsoft.Authorization/policyExemptions
+  condition:
+    source: Parameter
+    withinPath:
+      - template/deployments/contoso/landing-zones/subscription-1/policy/
