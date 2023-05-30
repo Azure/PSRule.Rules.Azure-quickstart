@@ -52,11 +52,11 @@ param usePurgeProtection bool = true
 param softDeleteDays int = 90
 
 @sys.description('Determines if access to the objects granted using RBAC. When true, access policies are ignored.')
-param useRBAC bool = false
+param useRBAC bool = true
 
 @sys.description('The network firewall defined for this vault.')
 param networkAcls object = {
-  defaultAction: 'Allow'
+  defaultAction: 'Deny'
   bypass: 'AzureServices'
   ipRules: []
   virtualNetworkRules: []
@@ -86,7 +86,7 @@ resource vault 'Microsoft.KeyVault/vaults@2019-09-01' = {
     enabledForDeployment: useDeployment
     enabledForTemplateDeployment: useTemplate
     enabledForDiskEncryption: useDiskEncryption
-    accessPolicies: accessPolicies
+    accessPolicies: !useRBAC ? accessPolicies : null
     tenantId: subscription().tenantId
     sku: {
       name: 'standard'
@@ -102,8 +102,9 @@ resource vault 'Microsoft.KeyVault/vaults@2019-09-01' = {
 }
 
 // Configure logging
-resource vaultName_Microsoft_Insights_service 'Microsoft.KeyVault/vaults/providers/diagnosticSettings@2016-09-01' = if (!empty(workspaceId)) {
-  name: '${name}/Microsoft.Insights/service'
+resource vaultName_Microsoft_Insights_service 'Microsoft.Insights/diagnosticSettings@2016-09-01' = if (!empty(workspaceId)) {
+  scope: vault
+  name: 'service'
   location: location
   properties: {
     workspaceId: workspaceId
@@ -114,9 +115,6 @@ resource vaultName_Microsoft_Insights_service 'Microsoft.KeyVault/vaults/provide
       }
     ]
   }
-  dependsOn: [
-    vault
-  ]
 }
 
 output resourceId string = vault.id
