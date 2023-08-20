@@ -33,6 +33,7 @@ This repository includes:
 This repository shows valid uses of PSRule for Azure, both pass and failure cases.
 Inspect the following files for instructions to test PSRule for Azure rules by creating a failure.
 
+- [bicep/deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam](bicep/deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam)
 - [bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep](bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep)
 - [template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json](template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json)
 

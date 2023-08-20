@@ -30,12 +30,14 @@ output:
 input:
   pathIgnore:
     # Ignore other files in the repository.
-    - '.vscode/'
-    - '.github/'
-    - '*.md'
+    - '**'
 
-    # Exclude modules but not tests.
-    - 'bicep/modules/**/*.bicep'
+    # Include deployments.
+    - '!bicep/deployments/**/*.bicepparam'
+    - '!bicep/deployments/**/deploy.bicep'
+    - '!template/**/*.parameters.json'
+
+    # Include module tests.
     - '!bicep/modules/**/*.tests.bicep'
 
 configuration:
@@ -44,6 +46,7 @@ configuration:
 
   # Enable automatic expansion of Azure Bicep source files.
   AZURE_BICEP_FILE_EXPANSION: true
+  AZURE_BICEP_PARAMS_FILE_EXPANSION: true
 
   # Configures the number of seconds to wait for build Bicep files.
   AZURE_BICEP_FILE_EXPANSION_TIMEOUT: 10
@@ -52,7 +55,7 @@ configuration:
   AZURE_BICEP_CHECK_TOOL: true
 
   # Configure the minimum version of the Bicep CLI.
-  AZURE_BICEP_MINIMUM_VERSION: '0.13.0'
+  AZURE_BICEP_MINIMUM_VERSION: '0.19.5'
 
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:
