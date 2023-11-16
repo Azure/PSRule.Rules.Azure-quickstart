@@ -55,3 +55,4 @@ stages:
     - publish: $(System.DefaultWorkingDirectory)/reports/ps-rule-results.sarif
       artifact: CodeAnalysisLogs
       displayName: Publish SARIF logs
+      condition: succeededOrFailed()

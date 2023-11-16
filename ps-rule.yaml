@@ -13,10 +13,13 @@ binding:
     - type
     - resourceType
 
+execution:
+  unprocessedObject: Ignore
+
 # Require minimum versions of modules.
 requires:
   PSRule: '@pre >=2.9.0'
-  PSRule.Rules.Azure: '@pre >=1.28.2'
+  PSRule.Rules.Azure: '@pre >=1.31.1'
 
 # Use PSRule for Azure.
 include:

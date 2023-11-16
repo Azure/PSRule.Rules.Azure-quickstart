@@ -37,3 +37,23 @@ jobs:
         uses: microsoft/ps-rule@v2.9.0
         with:
           modules: PSRule.Rules.Azure
+          outputFormat: Sarif
+          outputPath: reports/ps-rule-results.sarif
+          summary: true
+
+      # If you have GitHub Advanced Security you can upload PSRule scan results.
+      # Uncomment the next step to use this feature.
+      # - name: Upload results to security tab
+      #   uses: github/codeql-action/upload-sarif@v2
+      #   if: always()
+      #   with:
+      #     sarif_file: reports/ps-rule-results.sarif
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: PSRule-Sarif
+          path: reports/ps-rule-results.sarif
+          retention-days: 1
+          if-no-files-found: error
