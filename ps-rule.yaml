@@ -19,7 +19,7 @@ execution:
 # Require minimum versions of modules.
 requires:
   PSRule: '@pre >=2.9.0'
-  PSRule.Rules.Azure: '@pre >=1.31.1'
+  PSRule.Rules.Azure: '@pre >=1.34.2'
 
 # Use PSRule for Azure.
 include:
@@ -36,12 +36,11 @@ input:
     - '**'
 
     # Include deployments.
-    - '!bicep/deployments/**/*.bicepparam'
-    - '!bicep/deployments/**/deploy.bicep'
-    - '!template/**/*.parameters.json'
+    - '!deployments/**/*.bicepparam'
+    - '!deployments/**/deploy.bicep'
 
     # Include module tests.
-    - '!bicep/modules/**/*.tests.bicep'
+    - '!modules/**/*.tests.bicep'
 
 configuration:
   # Enable automatic expansion of Azure parameter files.
@@ -58,7 +57,10 @@ configuration:
   AZURE_BICEP_CHECK_TOOL: true
 
   # Configure the minimum version of the Bicep CLI.
-  AZURE_BICEP_MINIMUM_VERSION: '0.19.5'
+  AZURE_BICEP_MINIMUM_VERSION: '0.25.53'
+
+  AZURE_DEPLOYMENT_NONSENSITIVE_PARAMETER_NAMES:
+    - keys
 
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:

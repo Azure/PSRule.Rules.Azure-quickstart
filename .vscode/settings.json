@@ -11,5 +11,13 @@
   "[powershell]": {
     "editor.formatOnSave": false,
     "editor.tabSize": 4
-  }
+  },
+  "cSpell.words": [
+    "bicepparam",
+    "contoso",
+    "eastus"
+  ],
+  "cSpell.enableFiletypes": [
+    "bicep"
+  ]
 }

@@ -1,3 +1,10 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+// Note:
+// This Azure Bicep code demonstrates using resources directly.
+// Also see parameter file for configurable options.
+
 targetScope = 'resourceGroup'
 
 param name string
@@ -20,9 +27,12 @@ resource vault 'Microsoft.KeyVault/vaults@2023-02-01' = {
       name: 'standard'
     }
     tenantId: tenant().tenantId
+
+    // Try setting any of these to false to flag an issue.
     enableSoftDelete: true
     enablePurgeProtection: true
     enableRbacAuthorization: true
+
     networkAcls: {
       defaultAction: defaultAction
     }

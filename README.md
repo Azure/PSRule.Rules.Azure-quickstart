@@ -13,10 +13,10 @@ To learn more about PSRule for Azure, see <https://aka.ms/ps-rule-azure>.
 
 This repository includes:
 
-- **Azure Templates** &mdash; Starter Azure Resource Manager (ARM) templates and parameter files.
-  - Use the files in the `template/` folder if you are using ARM templates to deploy resources.
-- **Azure Bicep** &mdash; Starter Azure Bicep deployments and test files.
-  - Use the files in the `bicep/` folder if you are using Bicep deployments and modules to deploy resources.
+- **Azure Bicep deployment** &mdash; Starter Azure Bicep deployments.
+  - Use the files in the `deployments/` folder if you are using Bicep to deploy resources.
+- **Azure Bicep modules** &mdash; Starter Azure Bicep modules.
+  - Use the files in the `modules/` folder if you are using Bicep to create reusable modules with tests.
 - **GitHub Actions** &mdash; Starter workflow for checking Azure Infrastructure as Code (IaC).
   - Use the files in the `.github/workflows/` to check your Azure IaC with GitHub Actions.
   - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repository.
@@ -28,14 +28,21 @@ This repository includes:
   - PSRule options are configures within `ps-rule.yaml`.
   - Options include suppressing rules, configuring input/ output, and any rules modules.
 
+> **ARM templates**
+> PSRule for Azure supports ARM templates in addition to Bicep code.
+> However going forward this repository will focus on Bicep deployments and modules.
+> Existing ARM templates samples are no longer maintained and have been archived.
+> To access these samples jump to the [archive/with-arm-templates][3] branch.
+
+  [3]: https://github.com/Azure/PSRule.Rules.Azure-quickstart/tree/archive/with-arm-templates
+
 ## What to expect?
 
 This repository shows valid uses of PSRule for Azure, both pass and failure cases.
 Inspect the following files for instructions to test PSRule for Azure rules by creating a failure.
 
-- [bicep/deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam](bicep/deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam)
-- [bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep](bicep/deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep)
-- [template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json](template/deployments/contoso/landing-zones/subscription-1/rg-app-001/sttemplateapp001.parameters.json)
+- [deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam](deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam)
+- [deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep](deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep)
 
 ## Support
 
@@ -61,7 +68,6 @@ or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any addi
 ## Maintainers
 
 - [Bernie White](https://github.com/BernieWhite)
-- [Sam Bell](https://github.com/ms-sambell)
 
 ## License
 
