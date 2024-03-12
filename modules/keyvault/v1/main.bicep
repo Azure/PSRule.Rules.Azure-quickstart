@@ -2,9 +2,9 @@
 // Licensed under the MIT License.
 
 targetScope = 'resourceGroup'
-
 metadata name = 'Key Vault'
 metadata description = 'Create or update an Azure Key Vault.'
+metadata version = '1.0.0'
 
 @sys.description('The name of the Key Vault.')
 param name string

@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 // Note:
-// This Azure Bicep code demonistrates a deployment of one or more modules.
+// This Azure Bicep code demonstrates a deployment of one or more modules.
 // This file has multiple template errors to show validation.
 
 @description('Configures the location to deploy the Azure resources.')
@@ -42,7 +42,8 @@ module keyvault '../../../../../modules/keyvault/v1/main.bicep' = {
     workspaceId: '/subscriptions/<subscription_id>/resourceGroups/rg-test/providers/Microsoft.OperationalInsights/workspaces/latest001'
 
     // An env tag must be test, dev, or prod.
-    // Try setting this to 'demo' to fail the Org.Azure.Tags rule.
+    // Try setting this to 'demo' to fail the custom organization Org.Azure.Tags rule.
+    // See .ps-rule/Org.Rule.yaml for details.
     tags: {
       env: 'dev'
     }
