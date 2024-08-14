@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 # Note:
-# This files demonstrates using YAML-based rules.
+# This file demonstrates defining YAML-based custom rules.
 
 ---
 # Synopsis: Azure resource must have an valid env tag set.

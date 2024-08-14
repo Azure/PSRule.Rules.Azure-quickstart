@@ -22,13 +22,14 @@ This repository includes:
   - The `ms-analyze.yaml` file can be ignore or removed as this will not execute outside this repository.
 - **Azure Pipelines** &mdash; Starter pipeline for checking Azure Infrastructure as Code (IaC).
   - Use the files in the `.pipelines/` to check your Azure IaC with Azure Pipelines.
-- **Custom rules** &mdash; Example custom rules that enforce organization specific requirements.
-  - Use the files in the `.ps-rule/` folder to configure custom rules.
+- **Custom rules and baselines** &mdash; Example custom rules and baselines.
+  - These rules and baselines can be used to enforce organization specific requirements.
+  - Use the files in the `.ps-rule/` folder to configure custom rules and baselines.
 - **PSRule options** &mdash; Example options for using PSRule for Azure.
   - PSRule options are configures within `ps-rule.yaml`.
   - Options include suppressing rules, configuring input/ output, and any rules modules.
 
-> **ARM templates**
+> [!NOTE]
 > PSRule for Azure supports ARM templates in addition to Bicep code.
 > However going forward this repository will focus on Bicep deployments and modules.
 > Existing ARM templates samples are no longer maintained and have been archived.

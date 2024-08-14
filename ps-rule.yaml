@@ -13,6 +13,7 @@ binding:
     - type
     - resourceType
 
+# Do not warn if an Azure resource or related object has no rules.
 execution:
   unprocessedObject: Ignore
 
@@ -26,6 +27,7 @@ include:
   module:
     - PSRule.Rules.Azure
 
+# Configure the output culture for recommendations.
 output:
   culture:
     - 'en-US'
