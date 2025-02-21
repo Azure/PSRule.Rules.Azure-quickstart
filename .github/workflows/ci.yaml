@@ -1,23 +1,21 @@
 #
-# Analyze repository with PSRule for Azure
+# Run CI tests
 #
 
 # Note:
-# This workflow is designed to run in templated repositories to check Azure Infrastructure as Code.
+# This workflow is designed to run only in Azure/PSRule.Rules.Azure-quickstart.
+# You can safely deleted this file if you have templated this repository to your GitHub organization.
 
-# For PSRule for Azure documentation see:
-# https://aka.ms/ps-rule-azure
+# For PSRule documentation see:
+# https://aka.ms/ps-rule
 
 # For action details see:
 # https://aka.ms/ps-rule-action
 
-name: Analyze Azure resources
+name: CI
 
 # Run for main or PRs against main
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -26,20 +24,24 @@ on:
 permissions: {}
 
 jobs:
-  analyze:
-    name: Analyze repository
+  test:
+    name: Test
     runs-on: ubuntu-latest
     permissions:
-      # actions: read
+      actions: read
       contents: read
-      # security-events: write
-    if: github.repository != 'Azure/PSRule.Rules.Azure-quickstart'
+      security-events: write
+    if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      # Run analysis by using the PSRule GitHub action.
-      - name: Run PSRule analysis
+      - name: Check repository content
+        uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
+        with:
+          modules: PSRule.Rules.MSFT.OSS
+
+      - name: Check Azure samples
         uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
         with:
           modules: PSRule.Rules.Azure
@@ -47,13 +49,11 @@ jobs:
           outputPath: reports/ps-rule-results.sarif
           summary: true
 
-      # If you have GitHub Advanced Security you can upload PSRule scan results.
-      # Uncomment the next step to use this feature.
-      # - name: Upload results to security tab
-      #   uses: github/codeql-action/upload-sarif@dd746615b3b9d728a6a37ca2045b68ca76d4841a # v3.28.8
-      #   if: always()
-      #   with:
-      #     sarif_file: reports/ps-rule-results.sarif
+      - name: Upload results to security tab
+        uses: github/codeql-action/upload-sarif@dd746615b3b9d728a6a37ca2045b68ca76d4841a # v3.28.8
+        if: always()
+        with:
+          sarif_file: reports/ps-rule-results.sarif
 
       - name: Upload results
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0

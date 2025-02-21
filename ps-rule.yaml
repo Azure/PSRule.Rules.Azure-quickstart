@@ -22,6 +22,17 @@ requires:
   PSRule: '@pre >=2.9.0'
   PSRule.Rules.Azure: '@pre >=1.34.2'
 
+# Add PSRule v3 format configuration
+format:
+  bicep:
+    type:
+      - '.bicep'
+    enabled: true
+  bicepparam:
+    type:
+      - '.bicepparam'
+    enabled: true
+
 # Use PSRule for Azure.
 include:
   module:
@@ -33,6 +44,7 @@ output:
     - 'en-US'
 
 input:
+  fileObjects: true
   pathIgnore:
     # Ignore other files in the repository.
     - '**'
