@@ -16,6 +16,8 @@ name: CI
 
 # Run for main or PRs against main
 on:
+  push:
+    branches: [main, 'dependencies/*']
   pull_request:
     branches:
       - main
