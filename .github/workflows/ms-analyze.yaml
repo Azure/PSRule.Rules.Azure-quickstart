@@ -21,16 +21,20 @@ on:
       - main
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   analyze:
     name: Analyze repository
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run PSRule analysis
-        uses: microsoft/ps-rule@v2.9.0
+        uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
         with:
           modules: PSRule.Rules.MSFT.OSS
