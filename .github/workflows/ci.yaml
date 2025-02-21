@@ -28,7 +28,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       contents: read
+      security-events: write
     if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
     steps:
       - name: Checkout
