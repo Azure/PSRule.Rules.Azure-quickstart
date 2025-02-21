@@ -19,6 +19,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: '54 20 * * 0' # At 08:54 PM, on Sunday each week
   workflow_dispatch:
 
 permissions: {}

@@ -1,43 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
-  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
   "name": "PSRule for Azure QuickStart",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-noble",
   "customizations": {
     "vscode": {
       "settings": {
         "terminal.integrated.defaultProfile.linux": "pwsh",
         "terminal.integrated.profiles.linux": {
           "pwsh": {
-            "path": "/opt/microsoft/powershell/7/pwsh"
+            "path": "/usr/bin/pwsh"
           }
         }
       },
       "extensions": [
-        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
         "ms-vscode.powershell",
+        "ms-azuretools.vscode-bicep",
+        "GitHub.vscode-pull-request-github",
+        "github.vscode-github-actions",
         "bewhite.psrule-vscode",
         "msazurermtools.azurerm-vscode-tools",
-        "ms-azuretools.vscode-bicep",
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "ms-sarifvscode.sarif-viewer",
+        "github.vscode-github-actions",
         "ms-azure-devops.azure-pipelines"
       ]
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/github-cli": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
     },
-    "ghcr.io/devcontainers/features/azure-cli": {
-      "installBicep": false,
+    "ghcr.io/devcontainers/features/azure-cli:1": {
       "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/powershell": {
-      "version": "latest",
-      "modules": "PSRule.Rules.Azure"
     }
   },
-  "onCreateCommand": "/opt/microsoft/powershell/7/pwsh -f .devcontainer/container-build.ps1",
-  "postStartCommand": "/opt/microsoft/powershell/7/pwsh -f .devcontainer/container-start.ps1",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "remoteUser": "vscode"
+  "onCreateCommand": "dotnet tool install --global PowerShell --version 7.4.7 && sudo chown -R vscode:vscode /usr/bin/pwsh && sudo apt-get update -y && sudo apt-get upgrade -y && dotnet restore && ln /usr/bin/pwsh /home/vscode/.dotnet/tools/pwsh --force",
+  "updateContentCommand": "/usr/bin/pwsh -f .devcontainer/container-build.ps1",
+  "postStartCommand": "/usr/bin/pwsh -f .devcontainer/container-start.ps1"
 }
