@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 // Create or update a Virtual Machine
 targetScope = 'resourceGroup'
 metadata name = 'Virtual Machine - Windows Server'
