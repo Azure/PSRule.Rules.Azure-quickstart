@@ -54,7 +54,7 @@ jobs:
           summary: true
 
       - name: Upload results to security tab
-        uses: github/codeql-action/upload-sarif@f443b600d91635bebf5b0d9ebc620189c0d6fba5 # v3.29.5
+        uses: github/codeql-action/upload-sarif@e12f0178983d466f2f6028f5cc7a6d786fd97f4b # v3.29.5
         if: always()
         with:
           sarif_file: reports/ps-rule-results.sarif
