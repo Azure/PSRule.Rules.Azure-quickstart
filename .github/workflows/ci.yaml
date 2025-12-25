@@ -45,6 +45,10 @@ jobs:
         with:
           modules: PSRule.Rules.MSFT.OSS
 
+      # Install a specific version of Bicep for consistency across CI runs.
+      - name: Install Bicep
+        run: az bicep install --version v0.38.33
+
       - name: Check Azure samples
         uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
         with:
@@ -52,6 +56,9 @@ jobs:
           outputFormat: Sarif
           outputPath: reports/ps-rule-results.sarif
           summary: true
+        env:
+          # Use Bicep from Azure CLI.
+          PSRULE_AZURE_BICEP_USE_AZURE_CLI: true
 
       - name: Upload results to security tab
         uses: github/codeql-action/upload-sarif@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v3.29.5
