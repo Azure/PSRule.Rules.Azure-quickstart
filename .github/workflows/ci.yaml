@@ -38,7 +38,7 @@ jobs:
     if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Check repository content
         uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
@@ -61,13 +61,13 @@ jobs:
           PSRULE_AZURE_BICEP_USE_AZURE_CLI: true
 
       - name: Upload results to security tab
-        uses: github/codeql-action/upload-sarif@f443b600d91635bebf5b0d9ebc620189c0d6fba5 # v3.29.5
+        uses: github/codeql-action/upload-sarif@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v3.29.5
         if: always()
         with:
           sarif_file: reports/ps-rule-results.sarif
 
       - name: Upload results
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
           name: PSRule-Sarif
