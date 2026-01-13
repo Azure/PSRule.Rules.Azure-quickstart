@@ -40,7 +40,7 @@ jobs:
 
       # Install a specific version of Bicep for consistency across CI runs.
       - name: Install Bicep
-        run: az bicep install --version v0.38.33
+        run: az bicep install --version v0.39.26
 
       # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
