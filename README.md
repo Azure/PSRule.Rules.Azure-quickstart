@@ -45,6 +45,10 @@ Inspect the following files for instructions to test PSRule for Azure rules by c
 - [deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam](deployments/contoso/landing-zones/subscription-1/rg-app-001/dev.bicepparam)
 - [deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep](deployments/contoso/landing-zones/subscription-1/rg-app-002/deploy.bicep)
 
+For examples of how to reference resources that require secrets to be passed in, see:
+
+- [deployments/contoso/landing-zones/subscription-1/rg-vm-001/deploy.bicep](deployments/contoso/landing-zones/subscription-1/rg-vm-001/deploy.bicep)
+
 ## Support
 
 This project uses GitHub Issues to track bugs and feature requests.

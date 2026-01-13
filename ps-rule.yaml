@@ -72,8 +72,14 @@ configuration:
   # Configure the minimum version of the Bicep CLI.
   AZURE_BICEP_MINIMUM_VERSION: '0.39.26'
 
+  AZURE_PARAMETER_DEFAULTS:
+    adminPassword: $CREDENTIAL_PLACEHOLDER$
+
   AZURE_DEPLOYMENT_NONSENSITIVE_PARAMETER_NAMES:
     - keys
+
+  AZURE_RESOURCE_GROUP:
+    tags: {}
 
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:
@@ -81,3 +87,10 @@ suppression:
     - kvtest001
   Azure.Storage.BlobPublicAccess:
     - sttest001
+
+# Disable the following rules by name.
+rule:
+  exclude:
+    - Azure.VM.AMA
+    - Azure.VM.MaintenanceConfig
+    - Azure.VM.MigrateAMA
