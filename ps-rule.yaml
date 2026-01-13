@@ -70,7 +70,7 @@ configuration:
   AZURE_BICEP_CHECK_TOOL: true
 
   # Configure the minimum version of the Bicep CLI.
-  # AZURE_BICEP_MINIMUM_VERSION: '0.39.26'
+  AZURE_BICEP_MINIMUM_VERSION: '0.39.26'
 
   AZURE_DEPLOYMENT_NONSENSITIVE_PARAMETER_NAMES:
     - keys
