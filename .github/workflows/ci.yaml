@@ -47,7 +47,7 @@ jobs:
 
       # Install a specific version of Bicep for consistency across CI runs.
       - name: Install Bicep
-        run: az bicep install --version v0.38.33
+        run: az bicep install --version v0.39.26
 
       - name: Check Azure samples
         uses: microsoft/ps-rule@46451b8f5258c41beb5ae69ed7190ccbba84112c # v2.9.0
