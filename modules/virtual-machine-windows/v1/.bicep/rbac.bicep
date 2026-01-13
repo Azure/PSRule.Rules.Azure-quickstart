@@ -33,6 +33,8 @@ param resource string
 // VARIABLES
 // ---------
 
+// Map of common RBAC role names to their IDs.
+// Azure uses specific GUIDs for built-in roles however it is easier to reference them by name.
 var roles = {
   Owner: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')
   Contributor: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')
@@ -46,9 +48,8 @@ var roles = {
     '9980e02c-c2be-4d73-94e8-173b1dc7cf3c'
   )
 }
-var roleDefinitionId = contains(roles, role)
-  ? roles[role]
-  : subscriptionResourceId('Microsoft.Authorization/roleDefinitions', role)
+
+var roleDefinitionId = roles[?role] ?? subscriptionResourceId('Microsoft.Authorization/roleDefinitions', role)
 
 // ---------
 // RESOURCES

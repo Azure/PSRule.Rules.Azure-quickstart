@@ -3,6 +3,7 @@
 
 // Create or update a Virtual Machine
 targetScope = 'resourceGroup'
+
 metadata name = 'Virtual Machine - Windows Server'
 metadata description = 'Deploys and configures a Windows Server Virtual Machine. VM will automatically domain join and configure monitoring.'
 metadata version = '1.0.0'
