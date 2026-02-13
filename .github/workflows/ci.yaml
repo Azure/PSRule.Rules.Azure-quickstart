@@ -60,7 +60,7 @@ jobs:
         #   PSRULE_AZURE_BICEP_USE_AZURE_CLI: true
 
       - name: Upload results to security tab
-        uses: github/codeql-action/upload-sarif@cdefb33c0f6224e58673d9004f47f7cb3e328b89 # v3.29.5
+        uses: github/codeql-action/upload-sarif@9e907b5e64f6b83e7804b09294d44122997950d6 # v3.29.5
         if: always()
         with:
           sarif_file: reports/ps-rule-results.sarif
