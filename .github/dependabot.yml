@@ -8,14 +8,18 @@
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: 'github-actions'
+  - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: daily
     labels:
       - dependencies
-    reviewers:
-      - azure/psrule-rules-azure
+    groups:
+      github:
+        patterns:
+          - actions/*
+          - github/*
+
   # Maintain dependencies for Dev Containers
   - package-ecosystem: devcontainers
     directory: '/'
@@ -23,8 +27,7 @@ updates:
       interval: daily
     labels:
       - dependencies
-    reviewers:
-      - azure/psrule-rules-azure
+
   - package-ecosystem: dotnet-sdk
     directory: /
     schedule:
