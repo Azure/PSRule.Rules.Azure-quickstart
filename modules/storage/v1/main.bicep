@@ -396,9 +396,9 @@ resource managementPolicies 'Microsoft.Storage/storageAccounts/managementPolicie
 
 @sys.description('Create or update a Private Endpoint for the Storage Account.')
 module pe '.bicep/pe.bicep' = [for endpoint in endpoints: {
-  name: 'pend-${storageAccountName}-${endpoint[0]}-001'
+  name: 'pend-${storageAccountName}-${endpoint}-001'
   params: {
-    name: 'pend-${storageAccountName}-${endpoint[0]}-001'
+    name: 'pend-${storageAccountName}-${endpoint}-001'
     location: location
     resourceId: storageAccount.id
     groupId: endpoint
